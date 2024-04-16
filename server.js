@@ -15,12 +15,13 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // mongoose.connect("mongodb://0.0.0.0:27017/mern_crud_blog");
-mongoose.connect(process.env.DatabaseURL);
+// mongoose.connect(process.env.DatabaseURL);
+mongoose.connect("mongodb+srv://test_run:UOzBFTkKs2xxqetU@cluster0.y5jlmcy.mongodb.net/Library58?retryWrites=true&w=majority&appName=Cluster0");
 
 mongoose.connection
   .on("open", () => {
     console.log("Mongoose connection open");
-    app.listen(5000, () => console.log("listening on port 5000"));
+    app.listen(6000, () => console.log("listening on port 5000"));
   })
   .on("error", (err) => {
     console.log(`Connection error: ${err.message}`);
