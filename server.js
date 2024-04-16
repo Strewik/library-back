@@ -14,8 +14,8 @@ const port = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://0.0.0.0:27017/mern_crud_blog");
-// mongoose.connect(process.env.DatabaseURL);
+// mongoose.connect("mongodb://0.0.0.0:27017/mern_crud_blog");
+mongoose.connect(process.env.DatabaseURL);
 
 mongoose.connection
   .on("open", () => {
